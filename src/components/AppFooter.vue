@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { Github, Linkedin, Mail, ArrowUp } from 'lucide-vue-next'
+import { ArrowUp, Github, Linkedin, Mail } from "lucide-vue-next";
 
-const currentYear = new Date().getFullYear()
+const currentYear = new Date().getFullYear();
 
 function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 </script>
 
@@ -19,15 +19,17 @@ function scrollToTop() {
             class="text-2xl font-bold text-foreground hover:text-primary transition-colors"
             @click.prevent="scrollToTop"
           >
-            AM<span class="text-primary">.</span>
+            ED<span class="text-primary">.</span>
           </a>
-          <p class="text-sm text-muted-foreground mt-2">Développeur Full-Stack</p>
+          <p class="text-sm text-muted-foreground mt-2">
+            Développeur Full-Stack
+          </p>
         </div>
 
         <!-- Navigation -->
         <div class="flex justify-center gap-6">
           <a
-            v-for="item in ['Projets', 'Expérience', 'Contact']"
+            v-for="item in ['Projects', 'Expérience', 'Contact']"
             :key="item"
             :href="`#${item.toLowerCase().replace('é', 'e')}`"
             class="text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -40,7 +42,7 @@ function scrollToTop() {
         <div class="flex items-center justify-end gap-4">
           <div class="flex items-center gap-3">
             <a
-              href="https://github.com/alexandremartin"
+              href="https://github.com/EnzoDiGiovanni"
               target="_blank"
               rel="noopener noreferrer"
               class="p-2 rounded-full border border-border text-muted-foreground hover:text-foreground hover:border-foreground transition-all"
@@ -49,7 +51,7 @@ function scrollToTop() {
               <Github class="h-4 w-4" />
             </a>
             <a
-              href="https://linkedin.com/in/alexandremartin"
+              href="https://www.linkedin.com/in/enzodigiovanni/"
               target="_blank"
               rel="noopener noreferrer"
               class="p-2 rounded-full border border-border text-muted-foreground hover:text-foreground hover:border-foreground transition-all"
@@ -58,7 +60,7 @@ function scrollToTop() {
               <Linkedin class="h-4 w-4" />
             </a>
             <a
-              href="mailto:alexandre.martin@email.com"
+              href="mailto:digiovannienzo1@gmail.com"
               class="p-2 rounded-full border border-border text-muted-foreground hover:text-foreground hover:border-foreground transition-all"
               aria-label="Email"
             >
@@ -73,17 +75,24 @@ function scrollToTop() {
             aria-label="Retour en haut"
             @click="scrollToTop"
           >
-            <ArrowUp class="h-4 w-4 group-hover:-translate-y-0.5 transition-transform" />
+            <ArrowUp
+              class="h-4 w-4 group-hover:-translate-y-0.5 transition-transform"
+            />
           </button>
         </div>
       </div>
 
       <!-- Copyright -->
-      <div class="mt-10 pt-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div
+        class="mt-10 pt-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4"
+      >
         <p class="text-xs text-muted-foreground">
-          © {{ currentYear }} Alexandre Martin. Construit avec Vue.js &amp; Tailwind CSS.
+          © {{ currentYear }} Enzo Di Giovanni. Construit avec Vue.js &amp;
+          Tailwind CSS.
         </p>
-        <p class="text-xs text-muted-foreground">Design &amp; Développement par AM</p>
+        <p class="text-xs text-muted-foreground">
+          Design &amp; Développement par Enzo DI GIOVANNI
+        </p>
       </div>
     </div>
   </footer>

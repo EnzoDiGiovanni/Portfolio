@@ -1,40 +1,40 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
-import { Menu, X, ArrowUpRight } from 'lucide-vue-next'
-import AppButton from '@/components/ui/AppButton.vue'
-import { navLinks } from '@/data/navigation'
+import AppButton from "@/components/ui/AppButton.vue";
+import { navLinks } from "@/data/navigation";
+import { ArrowUpRight, Menu, X } from "lucide-vue-next";
+import { onMounted, onUnmounted, ref } from "vue";
 
-const isScrolled = ref(false)
-const isMobileMenuOpen = ref(false)
-const activeSection = ref('')
+const isScrolled = ref(false);
+const isMobileMenuOpen = ref(false);
+const activeSection = ref("");
 
 function handleScroll() {
-  isScrolled.value = window.scrollY > 20
+  isScrolled.value = window.scrollY > 20;
 
-  const sections = navLinks.map((link) => link.href.replace('#', ''))
+  const sections = navLinks.map((link) => link.href.replace("#", ""));
   for (const section of [...sections].reverse()) {
-    const element = document.getElementById(section)
+    const element = document.getElementById(section);
     if (element && element.getBoundingClientRect().top <= 200) {
-      activeSection.value = section
-      break
+      activeSection.value = section;
+      break;
     }
   }
 }
 
 function handleNavClick(href: string) {
-  isMobileMenuOpen.value = false
-  const element = document.querySelector(href)
+  isMobileMenuOpen.value = false;
+  const element = document.querySelector(href);
   if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
+    element.scrollIntoView({ behavior: "smooth" });
   }
 }
 
 function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-onMounted(() => window.addEventListener('scroll', handleScroll))
-onUnmounted(() => window.removeEventListener('scroll', handleScroll))
+onMounted(() => window.addEventListener("scroll", handleScroll));
+onUnmounted(() => window.removeEventListener("scroll", handleScroll));
 </script>
 
 <template>
@@ -49,13 +49,11 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
     <nav class="mx-auto max-w-[1200px] px-6">
       <div class="flex items-center justify-between">
         <!-- Logo -->
-        <a
-          href="#"
-          class="relative group"
-          @click.prevent="scrollToTop"
-        >
-          <span class="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-200">
-            AM<span class="text-primary">.</span>
+        <a href="#" class="relative group" @click.prevent="scrollToTop">
+          <span
+            class="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-200"
+          >
+            ED<span class="text-primary">.</span>
           </span>
         </a>
 
@@ -85,7 +83,9 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         <div class="hidden md:block">
           <AppButton variant="primary" @click="handleNavClick('#contact')">
             Contact
-            <ArrowUpRight class="ml-1 h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ArrowUpRight
+              class="ml-1 h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+            />
           </AppButton>
         </div>
 
@@ -95,10 +95,22 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
           aria-label="Toggle menu"
           @click="isMobileMenuOpen = !isMobileMenuOpen"
         >
-          <span :class="['absolute transition-all duration-300', isMobileMenuOpen ? 'opacity-0 rotate-90' : 'opacity-100 rotate-0']">
+          <span
+            :class="[
+              'absolute transition-all duration-300',
+              isMobileMenuOpen ? 'opacity-0 rotate-90' : 'opacity-100 rotate-0',
+            ]"
+          >
             <Menu :size="24" />
           </span>
-          <span :class="['absolute transition-all duration-300', isMobileMenuOpen ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90']">
+          <span
+            :class="[
+              'absolute transition-all duration-300',
+              isMobileMenuOpen
+                ? 'opacity-100 rotate-0'
+                : 'opacity-0 -rotate-90',
+            ]"
+          >
             <X :size="24" />
           </span>
         </button>
@@ -127,7 +139,11 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
             >
               {{ link.label }}
             </a>
-            <AppButton variant="primary" class="mt-2" @click="handleNavClick('#contact')">
+            <AppButton
+              variant="primary"
+              class="mt-2"
+              @click="handleNavClick('#contact')"
+            >
               Me contacter
               <ArrowUpRight class="ml-1 h-4 w-4" />
             </AppButton>

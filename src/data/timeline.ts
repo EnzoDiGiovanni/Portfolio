@@ -1,64 +1,49 @@
 export interface TimelineItem {
-  type: 'work' | 'education'
-  title: string
-  organization: string
-  location: string
-  period: string
-  description: string
-  achievements?: string[]
+  type: "work" | "education";
+  title: string;
+  organization: string;
+  location: string;
+  period: string;
+  description: string;
+  achievements?: string[];
 }
 
 export const timeline: TimelineItem[] = [
   {
-    type: 'work',
-    title: 'Développeur Full-Stack Senior',
-    organization: 'TechCorp',
-    location: 'Paris, France',
-    period: '2022 - Présent',
-    description: "Lead technique sur des projets e-commerce à fort trafic.",
+    type: "work",
+    title: "Développeur Full-Stack",
+    organization: "Novius",
+    location: "Lyon, France",
+    period: "2025 - Présent",
+    description: "Développeur Full Stack en alternance",
     achievements: [
-      'Architecture microservices gérant 1M+ requêtes/jour',
-      'Réduction de 40% du temps de chargement',
-      "Management d'une équipe de 4 développeurs",
+      "Résolution de bug",
+      "Ajout de nouvelles features",
+      "Intervention sur des projets existants en fonction de la demande des chefs de projets",
     ],
   },
   {
-    type: 'work',
-    title: 'Développeur Full-Stack',
-    organization: 'StartupLab',
-    location: 'Lyon, France',
-    period: '2020 - 2022',
-    description: 'Développement d\'applications SaaS B2B.',
+    type: "work",
+    title: "Développeur Full Stack",
+    organization: "JR Web Concept",
+    location: "Lyon, France",
+    period: "Mai - Juin 2025",
+    description: "Création d'application web complète en Laravel + VueJs",
     achievements: [
-      'Conception et déploiement de 3 produits SaaS',
-      'Implémentation de pipelines CI/CD',
-      'Migration vers architecture cloud AWS',
+      "Mise en ligne du projet Speed Dating",
+      "Autonomie complète sur la gestion de mes tâches",
     ],
   },
   {
-    type: 'work',
-    title: 'Développeur Front-end',
-    organization: 'AgenceWeb',
-    location: 'Marseille, France',
-    period: '2018 - 2020',
-    description: 'Création d\'interfaces pour clients grands comptes.',
+    type: "education",
+    title: "Bachelor Cycle web & Multimédia",
+    organization: "MyDigitalSchool",
+    location: "Lyon, France",
+    period: "2023 - présent",
+    description: "Spécialisation en développement web.",
     achievements: [
-      'Migration React pour 5+ clients',
-      'Mise en place de design systems',
-      'Optimisation des performances web',
+      "Apprentissage de l'algorithme et des concepts avancés",
+      "Projet concret principalement en Laravel",
     ],
   },
-  {
-    type: 'education',
-    title: 'Master Informatique',
-    organization: 'Université Paris-Saclay',
-    location: 'Paris, France',
-    period: '2016 - 2018',
-    description: 'Spécialisation en génie logiciel et systèmes distribués.',
-    achievements: [
-      'Mention Très Bien',
-      "Projet de fin d'études sur le ML distribué",
-      'Stage de recherche en optimisation',
-    ],
-  },
-]
+];

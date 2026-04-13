@@ -1,50 +1,46 @@
 export interface Skill {
-  name: string
-  level: number
+  name: string;
+  icon: string; // Iconify icon id
 }
 
 export interface SkillCategory {
-  title: string
-  color: string
-  borderColor: string
-  skills: Skill[]
+  title: string;
+  label: string;
+  accentClass: string;
+  skills: Skill[];
 }
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: 'Front-end',
-    color: 'from-blue-500/20 to-cyan-500/20',
-    borderColor: 'group-hover:border-blue-500/50',
+    title: "Front-end",
+    label: "UI & Frameworks",
+    accentClass: "text-blue-400",
     skills: [
-      { name: 'React', level: 95 },
-      { name: 'Next.js', level: 90 },
-      { name: 'TypeScript', level: 92 },
-      { name: 'Tailwind CSS', level: 95 },
-      { name: 'Vue.js', level: 75 },
+      { name: "Vue.js", icon: "logos:vue" },
+      { name: "Svelte", icon: "logos:svelte" },
+      { name: "TypeScript", icon: "logos:typescript-icon" },
+      { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
     ],
   },
   {
-    title: 'Back-end',
-    color: 'from-green-500/20 to-emerald-500/20',
-    borderColor: 'group-hover:border-green-500/50',
+    title: "Back-end",
+    label: "Serveurs & BDD",
+    accentClass: "text-green-400",
     skills: [
-      { name: 'Node.js', level: 90 },
-      { name: 'Python', level: 80 },
-      { name: 'PostgreSQL', level: 88 },
-      { name: 'MongoDB', level: 82 },
-      { name: 'GraphQL', level: 78 },
+      { name: "Php", icon: "logos:php" },
+      { name: "Laravel", icon: "logos:laravel" },
+      { name: "Node.js", icon: "logos:nodejs-icon" },
+      { name: "MySql", icon: "logos:mysql" },
     ],
   },
   {
-    title: 'DevOps & Cloud',
-    color: 'from-orange-500/20 to-amber-500/20',
-    borderColor: 'group-hover:border-orange-500/50',
+    title: "DevOps & Cloud",
+    label: "Infrastructure",
+    accentClass: "text-orange-400",
     skills: [
-      { name: 'Docker', level: 85 },
-      { name: 'AWS', level: 80 },
-      { name: 'CI/CD', level: 88 },
-      { name: 'Git', level: 95 },
-      { name: 'Linux', level: 82 },
+      { name: "Git", icon: "logos:git-icon" },
+      { name: "GitHub", icon: "logos:github-icon" },
+      { name: "Docker", icon: "logos:docker-icon" },
     ],
   },
-]
+];
